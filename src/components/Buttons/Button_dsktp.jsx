@@ -3,14 +3,15 @@ import styled from "styled-components";
 
 //Estilização do botão
 const Button = styled.button`
-    width: 100px;
-    height: 40px;
+    font-family: 'Neutra';
+    width: 100%;
+    height: 100%;
     background-color: #0A5DA6;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: regular;
     color: white;
     outline: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -26,10 +27,10 @@ const Button = styled.button`
 
 `;
 
-export default function Button_dsktp({text}) {
+export default function Button_dsktp({text,fontsize}) {
 
     return (
-        <Button>
+        <Button style={{fontSize: fontsize}}>
             {text}
         </Button>
     )

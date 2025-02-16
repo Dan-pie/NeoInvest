@@ -4,8 +4,8 @@ import styled from "styled-components";
 
 //Estilização da div principal
 const InputWrapper = styled.div`
-   width: 250px;
-   height: 60px;
+   width: 100%;
+   height: 50%;
    background-color: white;
    position: relative;
 
@@ -20,7 +20,7 @@ const Input = styled.input`
     outline: none;
     background-color: white;
     color: black;
-    border: 0.5px solid rgba(0, 0, 0, 0.54);
+    border: 0.5px solid rgba(0, 0, 0, 0.18);
     height: 100%;
     font-size: 13px;
     overflow: hidden;
@@ -111,7 +111,7 @@ export default function Input_dsktp({type ,label, pass_eye}){
             </InputLabel>
             {pass_eye && (
                 <EyeIcon 
-                    className={`fa-regular fa-eye${showPassword ? '-slash' : ''}`} 
+                    className={`fa-regular fa-eye${showPassword ? '' : '-slash'}`} 
                     id="eye"
                     onClick={togglePasswordVisibility}
                 />
