@@ -4,6 +4,7 @@ import Input_dsktp from './components/inputs/Input_dsktp.jsx'
 import Button_dsktp from './components/Buttons/Button_dsktp.jsx'
 import Button_google from './components/Buttons/Button_google.jsx'
 import Button_twitter from './components/Buttons/Button_twitter.jsx'
+import ForgotPassword from './components/Buttons/forgot_pass.jsx'
 import Logo from './components/logo.jsx'
 //importação de estilos
 import styled from 'styled-components'
@@ -96,7 +97,7 @@ function App() {
           </div>
           
           <form onSubmit={isCadastro ? Handleregister : Handlelogin}>
-            <InputWrapper cad={isCadastro}>
+            <InputWrapper className='custom-input-wrapper' cad={isCadastro}>
               <Input_dsktp 
                 onChange={isCadastro ? (e) => setNome(e.target.value) : (e) => setEmail(e.target.value)} 
                 label={isCadastro ? 'Nome' : 'Email'} 
@@ -127,8 +128,9 @@ function App() {
               <div className="input-checkbox">
                 <input type="checkbox" id='checkbox'/>
                 <label htmlFor="checkbox">Remember me</label>
+                
               </div>
-              <p id='forgot'>Esqueceu sua senha?</p>
+              <ForgotPassword/>
             </RememberWrapper>
             <div className="buttonWrapper">
                 <Button_dsktp className='btn' text={isCadastro ? 'Cadastrar' : 'Login'}  fontsize='24px'/>
@@ -136,6 +138,7 @@ function App() {
             <div className='extra'>
                 <Button_google/>
                 <Button_twitter/>
+                
             </div>
           </form>
 

@@ -82,7 +82,7 @@ export default function Input_dsktp({ type, label, pass_eye, value, onChange }) 
     };
 
     return (
-        <InputWrapper isfocused={isfocused}>
+        <InputWrapper className="custom-input-wrapper" isfocused={isfocused}>
             <Line isfocused={isfocused} />
             <Input
                 id={label}
