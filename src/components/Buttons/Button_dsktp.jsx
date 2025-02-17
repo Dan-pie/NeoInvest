@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 //Estilização do botão
 const Button = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Neutra';
     width: 100%;
     height: 100%;
