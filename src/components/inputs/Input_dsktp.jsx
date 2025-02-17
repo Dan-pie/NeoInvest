@@ -72,42 +72,29 @@ const EyeIcon = styled.i`
 
 
 //Função principal
-export default function Input_dsktp({type ,label, pass_eye}){
+export default function Input_dsktp({ type, label, pass_eye, value, onChange }) {
     const [isfocused, setIsfocused] = useState(false);
-    const [value, setValue] = useState('');
     const [showPassword, setShowPassword] = useState(false);
 
-    //função para visibilidade do password
+    // Função para visibilidade do password
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
 
-    //função para atualizar o input toda hora
-    const HandleChange = (e) => {
-        setValue(e.target.value);
-    }
-
-
-    return(
+    return (
         <InputWrapper isfocused={isfocused}>
-            <Line
-                isfocused={isfocused}
-            />
-            <Input 
+            <Line isfocused={isfocused} />
+            <Input
                 id={label}
-                type={showPassword ? 'text' : type} 
+                type={showPassword ? 'text' : type}
                 isfocused={isfocused}
                 value={value}
                 onFocus={() => setIsfocused(true)}
-                onChange ={HandleChange}
+                onChange={onChange} // Agora recebe a função de onChange da parte pai
                 onBlur={() => setIsfocused(false)}
-
             />
-            <InputLabel
-                htmlFor={label}
-                isfocused={isfocused} 
-                hasvalue={value.length > 0}>
-                    {label}
+            <InputLabel htmlFor={label} isfocused={isfocused} hasvalue={value.length > 0}>
+                {label}
             </InputLabel>
             {pass_eye && (
                 <EyeIcon 
@@ -116,7 +103,6 @@ export default function Input_dsktp({type ,label, pass_eye}){
                     onClick={togglePasswordVisibility}
                 />
             )}
-                            
         </InputWrapper>
-    )
+    );
 }
