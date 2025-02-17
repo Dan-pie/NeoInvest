@@ -30,6 +30,11 @@ const RememberWrapper = styled.div`
     align-items: center;
     width: 480px;
     margin-bottom: 50px;
+
+
+    @media (max-width: 600px){
+      width: 350px;
+    }
   `
 
 
@@ -127,7 +132,7 @@ function App() {
             <RememberWrapper cad={isCadastro}>
               <div className="input-checkbox">
                 <input type="checkbox" id='checkbox'/>
-                <label htmlFor="checkbox">Remember me</label>
+                <label htmlFor="checkbox">Lembrar de mim</label>
                 
               </div>
               <ForgotPassword/>
